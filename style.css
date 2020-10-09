@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.itmes{
+    
+}
+li{
+    list-style: none;
+}
+.ham-menu{
+    position: relative;
+}
+.ham-menu input[type='checkbox']{
+    display: block;
+    width: 42px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    z-index: 5;
+    opacity: 0;
+
+}
+.ham-lines{
+    width: 42px;
+    height: 30px;
+    position: absolute;
+    top: 18px;
+    left: 7px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ham-lines .line{
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: black;
+    border-radius: 10px;
+}
+.itmes{
+    padding-top: 100px;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+    padding-left: 10px;
+    background: #ccc;
+    margin-top: -15px;
+    margin-left: -15px;
+}
+.itmes li{
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+.ham-menu input[type='checkbox']:checked ~ .itmes{
+   transform: translateX(0);
+}
+.ham-lines .line1{
+    transform-origin: 0% 0%;
+}
+.ham-lines .line3{
+    transform-origin: 0% 100%;
+}
+.ham-menu input[type='checkbox']:checked ~ .ham-lines .line1{
+    transform: rotate(45deg);
+}
+.ham-menu input[type='checkbox']:checked ~ .ham-lines .line2{
+    display: none;
+}
+.ham-menu input[type='checkbox']:checked ~ .ham-lines .line3{
+    transform: rotate(-45deg);
+}
